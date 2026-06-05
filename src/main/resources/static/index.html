@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Todo Manager</title>
+    <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<button id="themeToggle">🌙 Dark Mode</button>
+
+<div class="container">
+
+    <h1>🎯 Student Todo Manager</h1>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2 id="totalCount">0</h2>
+            <p>Total Tasks</p>
+        </div>
+
+        <div class="card">
+            <h2 id="completedCount">0</h2>
+            <p>Completed</p>
+        </div>
+
+        <div class="card">
+            <h2 id="pendingCount">0</h2>
+            <p>Pending</p>
+        </div>
+
+        <div class="card">
+            <h2 id="streakCount">0</h2>
+            <p>🔥 Study Streak</p>
+        </div>
+
+    </div>
+
+    <h3>📈 Progress</h3>
+
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
+
+    <div class="input-section">
+
+        <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter Task">
+
+        <select id="priority">
+
+            <option value="HIGH">
+                🔴 HIGH
+            </option>
+
+            <option value="MEDIUM">
+                🟡 MEDIUM
+            </option>
+
+            <option value="LOW">
+                🟢 LOW
+            </option>
+
+        </select>
+
+        <input
+                type="text"
+                id="category"
+                placeholder="Category">
+
+        <input
+                type="date"
+                id="dueDate">
+
+        <button
+                class="add-btn"
+                onclick="addTask()">
+            Add Task
+        </button>
+
+    </div>
+
+    <div class="toolbar">
+
+        <input
+                type="text"
+                id="search"
+                placeholder="🔍 Search Tasks..."
+                onkeyup="loadTasks()">
+
+        <button onclick="exportCSV()">
+            📥 Export CSV
+        </button>
+
+    </div>
+
+    <h3>🔥 Today's Tasks</h3>
+
+    <ul id="taskList"></ul>
+
+</div>
+<footer class="footer">
+    <p>
+        Made with <span>curiosity</span> by
+        <strong>Lucky Banthia</strong>
+    </p>
+
+    <div class="socials">
+
+        <a href="https://www.linkedin.com/in/LuckyBanthia" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                 alt="LinkedIn"
+                 class="social-icon">
+        </a>
+
+        <a href="https://github.com/LuckyBanthia" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                 alt="GitHub"
+                 class="social-icon">
+        </a>
+
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body></html>
