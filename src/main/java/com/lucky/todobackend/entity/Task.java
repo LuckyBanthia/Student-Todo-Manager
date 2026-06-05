@@ -18,6 +18,8 @@ public class Task {
     private String category;
 
     private LocalDate dueDate;
+    private String userId;
+
     public Task() {
     }
 
@@ -61,6 +63,13 @@ public class Task {
 
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
 }
