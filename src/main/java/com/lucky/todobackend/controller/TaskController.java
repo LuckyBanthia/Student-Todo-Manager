@@ -15,9 +15,13 @@ public class TaskController {
     public TaskController(TaskService service) {
         this.service = service;
     }
-
     @GetMapping
-    public List<Task> getTasks(@RequestParam String userId) {
+    public List<Task> getTasks(@RequestParam(required = false) String userId) {
+
+        if (userId == null) {
+            userId = "demo";
+        }
+
         return service.getTasksByUser(userId);
     }
 
