@@ -17,12 +17,17 @@ public class TaskController {
     }
 
     @GetMapping
-    public List<Task> getAllTasks() {
-        return service.getAllTasks();
+    public List<Task> getTasks(@RequestParam String userId) {
+        return service.getTasksByUser(userId);
     }
 
     @PostMapping
     public Task createTask(@RequestBody Task task) {
+
+        if (task.getUserId() == null) {
+            task.setUserId("demo");
+        }
+
         return service.createTask(task);
     }
 
